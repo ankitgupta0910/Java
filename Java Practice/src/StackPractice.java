@@ -71,6 +71,7 @@ public class StackPractice {
         s.insert(30);
         s.insert(40);
         s.insert(50);
+        s.insert(60);
         s.traverse();
     }
 }
