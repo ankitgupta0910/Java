@@ -1,3 +1,10 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+
+import static java.lang.Math.abs;
+
 /**
  * Created by ankitgupta on 5/19/17.
  */
@@ -48,6 +55,7 @@ class TreeNode{
 public class BSTPractice {
 
     TreeNode root, curr, prev;
+    List<Integer> arr = new ArrayList<Integer>();
 
     BSTPractice()
     {
@@ -96,12 +104,12 @@ public class BSTPractice {
     }
 
     void inOrderTraversal(TreeNode n) {
-
         if (n == null)
             return;
 
         inOrderTraversal(n.getLeft());
         System.out.print(n.getData() + " ");
+        arr.add(n.getData());
         inOrderTraversal(n.getRight());
     }
 
@@ -112,6 +120,41 @@ public class BSTPractice {
         postOrderTraversal(n.getLeft());
         postOrderTraversal(n.getRight());
         System.out.print(n.getData() + " ");
+    }
+
+    TreeNode closest(TreeNode n, int k) {
+        TreeNode p = null;
+        if (n == null)
+            return null;
+
+        if (n.getData() == k)
+            return n;
+        else{
+            if (k < n.getData())
+            {
+                if (n.getLeft() != null)
+                {
+                    p = closest(n.getLeft(), k);
+                    return (abs(p.getData()-k) > abs(n.getData()-k) ? n : p);
+                }
+                else
+                    return n;
+            }
+            else
+            {
+                if (n.getRight() != null)
+                {
+                    p = closest(n.getLeft(), k);
+                    return (abs(p.getData()-k) > abs(n.getData()-k) ? n : p);
+                }
+                else
+                    return n;
+            }
+        }
+//        inOrderTraversal(n.getLeft());
+//        System.out.print(n.getData() + " ");
+//        arr.add(n.getData());
+//        inOrderTraversal(n.getRight())
     }
 
     public static void main(String[] args)
@@ -129,6 +172,10 @@ public class BSTPractice {
         s.inOrderTraversal(s.root);
         System.out.println(" ");
         s.postOrderTraversal(s.root);
+        System.out.println(" ");
+        System.out.println (s.closest(s.root, 52).getData());
+
+
     }
 
 }
