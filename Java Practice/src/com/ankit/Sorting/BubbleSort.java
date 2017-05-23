@@ -7,16 +7,14 @@ public class BubbleSort {
         public static void main(String[] args) {
             int a[] = {10,1,9,2,8,3,7,4,6,5};
             int t = 0;
-            boolean swapped=true;
-            for (int i = 0; i<a.length&&swapped;i++)
-            {swapped=false;
-                for (int j = i+1; j<a.length;j++)
-                    if (a[i] > a[j])
+            for (int i = a.length; i>0;i--)
+            {
+                for (int j = 0; j<i-1;j++)
+                    if (a[j] > a[j+1])
                     {
-                        t = a[i];
-                        a[i] = a[j];
-                        a[j] = t;
-                        swapped=true;
+                        t = a[j];
+                        a[j] = a[j+1];
+                        a[j+1] = t;
                     }
             }
 
