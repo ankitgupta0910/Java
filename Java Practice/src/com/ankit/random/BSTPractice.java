@@ -1,6 +1,6 @@
+package com.ankit.random;
+
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 
 import static java.lang.Math.abs;
