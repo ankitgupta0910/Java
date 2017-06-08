@@ -7,5 +7,7 @@ public interface Sports {
 
     public void setHomeTeam(String name);
     public void setVisitingTeam(String name);
-
+    static void show(){
+        System.out.println("Sports show");
+    }
 }

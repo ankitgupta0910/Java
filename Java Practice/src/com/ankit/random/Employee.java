@@ -25,36 +25,29 @@ public class Employee implements Comparable<Employee>{
     }
 
     public boolean equals(Object o){
-        if(o != null && o instanceof Employee)
-        {
-            int id = ((Employee)o).getId();
-            String name = ((Employee)o).getName();
-            if(id != 0 && name != null && id == this.getId() && name.equals(this.getName()))
-            {
-                return true;
-            }
+        System.out.println("Equals");
+//        if(o != null && o instanceof Employee)
+//        {
+//            int id = ((Employee)o).getId();
+//            String name = ((Employee)o).getName();
+//            if(id != 0 && name != null && id == this.getId() && name.equals(this.getName()))
+//            {
+//                return true;
+//            }
 
-        }
+//        }
         return false;
     }
 
     public int hashCode(){
+        System.out.println("Hashcode");
 //        System.out.println("Hash" + this.name.hashCode() +this.id);
-        return this.name.hashCode() + this.id;
-//            return 5;
+//        return this.name.hashCode() + this.id;
+            return 1;
     }
 
     @Override
     public int compareTo(Employee o) {
         return this.getName().compareTo(o.getName());
-    }
-}
-
-// Class to compare Movies by name
-class NameCompare implements Comparator<Employee>
-{
-    public int compare(Employee e1, Employee e2)
-    {
-        return e1.getName().compareTo(e2.getName());
     }
 }

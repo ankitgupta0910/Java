@@ -8,5 +8,5 @@ public interface Hockey extends Sports,Event {
     public void visitingGoalScored(int goal);
     public void endOfPeriod(int period);
     public void overtimePeriod(int ot);
-
+    public void show();
 }

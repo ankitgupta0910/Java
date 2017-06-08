@@ -24,10 +24,12 @@ public class StackArrayList {
 
    void traverse()
    {
-       for (int i = index; i >= 0; i--)
-       {
-           System.out.println(stackArray.get(i));
-       }
+//       for (int i = index; i >= 0; i--)
+//       {
+//           System.out.println(stackArray.get(i));
+//       }
+
+       stackArray.forEach(i ->System.out.println(i));
    }
 
     public static void main(String[] args)

@@ -87,6 +87,10 @@ public class Game implements Hockey {
 
     }
 
+    public void show(){
+        System.out.println("Game show");
+    }
+
     public static void main(String[] args) {
         Game gm = new Game();
         gm.setEventName("Super Bowl");
@@ -97,6 +101,11 @@ public class Game implements Hockey {
         gm.visitingGoalScored(7);
         gm.endOfPeriod(3);
 
+
+        gm.show();
+
+        Sports.show();
+        Event.show();
         System.out.println(gm.getEventName());
         System.out.println(gm.getEventPlace());
         System.out.println(gm.getHomeTeam());
